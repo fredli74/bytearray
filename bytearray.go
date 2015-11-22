@@ -5,10 +5,9 @@
 // Package bytearray provides a fixed size chunk []byte array with slab allocation.
 // ByteArrays utilize next-chunk-linking which provides full reader/writer compatibility
 // with any size you need. It uses an automatic chunk allocation with manual deallocation,
-// which means that all ByteArrays must be manually released when not used anymore to free
-// up the memory again. The optional "GC" routine is only in place to free up fully empty
-// slabs if they have not been used for a while. The slab and chunk sizes are configurable
-// globally and must be done before any chunks are allocated to prevent data corruption.
+// which means that all ByteArrays must be manually released when not used anymore.
+// The slab and chunk sizes are globally configurable and must be done before any chunks
+// are allocated.
 package bytearray
 
 import (
