@@ -114,8 +114,8 @@ func Stats() (AllocatedSlabs int64, GrabbedChunks int64, ReleasedChunks int64, M
 }
 
 // ChunkQuantize takes a size and round it up to an even chunk size (this can be used to calculate used memory)
-func ChunkQuantize(size int) int {
-	return ChunkSize + (size/ChunkSize)*ChunkSize
+func ChunkQuantize(size int64) int64 {
+	return int64(ChunkSize) + (size/int64(ChunkSize))*int64(ChunkSize)
 }
 
 //*******************************************************************************//
